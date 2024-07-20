@@ -11,13 +11,9 @@
 #include <iostream>
 
 bool solution(std::string const &str, std::string const &ending) {
-    std::cout << str << std::endl;
-    std::cout << ending << std::endl;
-  
-    int i, j;
-  
-    for (i = ending.length() - 1, j = str.length() - 1; i > 0; i--, j--) {
-      std::cout << str[j] << " == " << ending[i] << std::endl;
+    int i, j = 0;
+
+    for (i = ending.length() - 1, j = str.length() - 1; i >= 0; i--, j--) {
       if (str[j] != ending[i]) return false;
     }
 
@@ -26,9 +22,7 @@ bool solution(std::string const &str, std::string const &ending) {
 
 int main()
 {
-	std::cout << "Hello World" << std::endl;
-
-	solution("abc", "bc");
+	std::cout << "Does it end with: " << solution("abc", "abc") << std::endl;
 
 	return 0;
 }
